@@ -11,6 +11,7 @@ from sqlalchemy.orm import Session
 from danswer.configs.constants import CELERY_VESPA_SYNC_BEAT_LOCK_TIMEOUT
 from danswer.configs.constants import DanswerCeleryPriority
 from danswer.configs.constants import DanswerCeleryQueues
+from danswer.db.models import Document
 from danswer.redis.redis_object_helper import RedisObjectHelper
 from danswer.utils.variable_functionality import fetch_versioned_implementation
 from danswer.utils.variable_functionality import global_version
@@ -72,6 +73,7 @@ class RedisUserGroup(RedisObjectHelper):
 
         stmt = construct_document_select_by_usergroup(int(self._id))
         for doc in db_session.scalars(stmt).yield_per(1):
+            doc = cast(Document, doc)
             current_time = time.monotonic()
             if current_time - last_lock_time >= (
                 CELERY_VESPA_SYNC_BEAT_LOCK_TIMEOUT / 4
