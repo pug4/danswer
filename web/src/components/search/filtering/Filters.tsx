@@ -127,7 +127,7 @@ export function SourceSelector({
           </div>
         </PopoverTrigger>
         <PopoverContent
-          className="bg-background border-border border rounded-md z-[200] p-0"
+          className="bg-background-search-filter border-border border rounded-md z-[200] p-0"
           align="start"
         >
           <Calendar
@@ -498,7 +498,7 @@ export function HorizontalSourceSelector({
           </div>
         </PopoverTrigger>
         <PopoverContent
-          className="bg-background border-border border rounded-md z-[200] p-0"
+          className="bg-background-search-filter border-border border rounded-md z-[200] p-0"
           align="start"
         >
           <Calendar
@@ -517,7 +517,7 @@ export function HorizontalSourceSelector({
                 selectValue: timeRange?.selectValue || "",
               });
             }}
-            className="rounded-md "
+            className="rounded-md"
           />
         </PopoverContent>
       </Popover>
