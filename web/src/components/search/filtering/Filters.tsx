@@ -472,7 +472,6 @@ export function HorizontalSourceSelector({
               max-w-64
               border-border 
               rounded-lg 
-              bg-background
               max-h-96 
               overflow-y-scroll
               overscroll-contain
@@ -484,7 +483,6 @@ export function HorizontalSourceSelector({
               w-fit
               gap-x-1
               hover:bg-hover
-              bg-hover-light
               flex
               items-center
               bg-background-search-filter
