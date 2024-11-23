@@ -343,6 +343,15 @@ def stream_chat_message_objects(
             )
 
         try:
+            print("Getting LLMs for persona")
+            print(
+                new_msg_req.llm_override.__dict__ if new_msg_req.llm_override else None
+            )
+            print(
+                chat_session.llm_override.__dict__
+                if chat_session.llm_override
+                else None
+            )
             llm, fast_llm = get_llms_for_persona(
                 persona=persona,
                 llm_override=new_msg_req.llm_override or chat_session.llm_override,
