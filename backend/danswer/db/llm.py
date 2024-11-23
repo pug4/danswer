@@ -156,7 +156,6 @@ def fetch_embedding_provider(
 
 
 def fetch_default_provider(db_session: Session) -> FullLLMProvider | None:
-    print("THE DEAULT PROVIDER")
     provider_model = db_session.scalar(
         select(LLMProviderModel).where(
             LLMProviderModel.is_default_provider == True  # noqa: E712
@@ -168,7 +167,6 @@ def fetch_default_provider(db_session: Session) -> FullLLMProvider | None:
 
 
 def fetch_provider(db_session: Session, provider_name: str) -> FullLLMProvider | None:
-    print(f"Fetching LLM Provider with name {provider_name}")
     provider_model = db_session.scalar(
         select(LLMProviderModel).where(LLMProviderModel.name == provider_name)
     )
