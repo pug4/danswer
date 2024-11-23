@@ -42,7 +42,7 @@ function Calendar({
           "h-9 w-9 p-0 font-normal aria-selected:opacity-100"
         ),
         day_range_end:
-          "day-range-end bg-calendar-range-end !text-calendar-text-end",
+          "day-range-end bg-calendar-range-end  ring-calendar-ring-selected ring !text-calendar-text-end",
         day_selected:
           "bg text-calendar-text-selected hover:bg-calendar-bg-selected hover:text-calendar-text-selected  dark:bg-calendar-bg-selected-dark dark:text-calendar-text-selected-dark dark:hover:bg-calendar-bg-selected-dark dark:hover:text-calendar-text-selected-dark ",
         day_today:
@@ -54,7 +54,8 @@ function Calendar({
         day_range_middle:
           "aria-selected:bg-calendar-range-middle aria-selected:text-calendar-text-in-range dark:aria-selected:bg-calendar-range-middle-dark dark:aria-selected:text-calendar-text-in-range-dark",
         day_hidden: "invisible",
-        day_range_start: "bg-white text-text-900",
+        day_range_start:
+          "bg-calendar-background-selected ring-calendar-ring-selected ring text-text-900",
         ...classNames,
       }}
       components={{

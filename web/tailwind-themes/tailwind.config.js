@@ -210,6 +210,8 @@ module.exports = {
         "calendar-today-bg-dark": "var(--background-800)",
         "calendar-today-text": "var(--text-800)",
         "calendar-today-text-dark": "var(--text-200)",
+        "calendar-background-selected": "var(--white)",
+        "calendar-ring-selected": "var(--background-900)",
 
         "user-text": "var(--text-800)",
 
