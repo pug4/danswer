@@ -685,11 +685,13 @@ def fetch_chat_file(
     if not file_record:
         raise HTTPException(status_code=404, detail="File not found")
 
-    media_type = file_record.file_type
-    if not media_type:
-        media_type, _ = mimetypes.guess_type(file_record.display_name)
+    media_type: str | None = None
+    if file_record.file_type:
+        media_type = file_record.file_type
+    else:
+        media_type, __ = mimetypes.guess_type(file_record.display_name)
         if not media_type:
             media_type = "application/octet-stream"
-    print(media_type)
+
     file_io = file_store.read_file(file_id, mode="b")
     return StreamingResponse(file_io, media_type=media_type)

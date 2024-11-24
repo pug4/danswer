@@ -45,7 +45,7 @@ class FileManager:
             )
 
         response_json = response.json()
-        return response_json.get("files", cast(List[FileDescriptor], [])), []
+        return response_json.get("files", cast(List[FileDescriptor], [])), ""
 
     @staticmethod
     def fetch_uploaded_file(
